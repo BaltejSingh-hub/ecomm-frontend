@@ -33,7 +33,7 @@ const Product_details = () => {
         method: "GET",
         url: `${
           import.meta.env.VITE_REACT_API
-        }/welcome/productdetails?objectId=${id}`,
+        }welcome/productdetails?objectId=${id}`,
         headers: { Authorization: `Bearer ${token}` },
       }).then((e) => {
         console.log(

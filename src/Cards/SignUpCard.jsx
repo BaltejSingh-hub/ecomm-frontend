@@ -51,7 +51,7 @@ const SignUpCard = ({ selectPage,setSelectPage}) => {
       try{
         const response= await axios({
           method:"POST",
-          url:`${import.meta.env.VITE_REACT_API}/welcome/signup`,
+          url:`${import.meta.env.VITE_REACT_API}welcome/signup`,
           data:{
             email:values.email,
             username:values.username,

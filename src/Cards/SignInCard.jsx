@@ -38,7 +38,7 @@ const SignInCard = ({ selectPage, setSelectPage }) => {
 
       try {
         const response = await axios.post(
-          `${import.meta.env.VITE_REACT_API}/welcome/signin`,
+          `${import.meta.env.VITE_REACT_API}welcome/signin`,
           {
             email: values.email,
             password: values.password,

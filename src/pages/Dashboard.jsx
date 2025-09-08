@@ -102,7 +102,7 @@ const Dashboard = ({statusCode,setStatusCode}) => {
 
           const result= await axios({
             method:"GET",
-            url:`${import.meta.env.VITE_REACT_API}/welcome/products?page=${currentPage}&search=${search}&order=${increasing_price}`,
+            url:`${import.meta.env.VITE_REACT_API}welcome/products?page=${currentPage}&search=${search}&order=${increasing_price}`,
             headers:{Authorization:`Bearer ${token}`}
           }).then ((e)=>{
             setProductList(e.data.ProductList)
