@@ -47,15 +47,21 @@ const SignUpCard = ({ selectPage,setSelectPage}) => {
     },
     validationSchema,
     onSubmit: async (values) => {
-      
+      console.log("inside on ")
       try{
-            const response= await axios.post(`${import.meta.env.VITE_REACT_API}/welcome/signup`, {
-              headers:{Authorization:`${token}`}
-            },{
+        const response= await axios({
+          method:"POST",
+          url:`${import.meta.env.VITE_REACT_API}/welcome/signup`,
+          data:{
             email:values.email,
             username:values.username,
-            password:values.password,
+            password:values.password
+            
+          }
         })
+         
+        const data=response.data
+        
         const token=response.data.token 
         console.log("Down here should be the token")
         console.log(token)
@@ -66,7 +72,7 @@ const SignUpCard = ({ selectPage,setSelectPage}) => {
 
         
       }catch(err){
-          
+          console.error(err.message)
       }
        
 
@@ -142,6 +148,7 @@ const SignUpCard = ({ selectPage,setSelectPage}) => {
           </div>
 
           <SignUpButton submit={"submit"} name="Sign up" />
+          {/* <button type="submit" className="cursor-pointer">Sign up</button> */}
         </form>
         <div className="flex mt-2 justify-center">
           <p className="text-stone-400 text-xs text-sm mr-2">
