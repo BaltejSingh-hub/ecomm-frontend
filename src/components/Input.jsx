@@ -16,7 +16,7 @@ export const Input = ({
       <input
         name={name}
         onChange={onChange}
-        className="border-b-2 border-indigo-500 h-5 mt-5 w-full focus:outline-none text-xs"
+        className="border-b-2 border-indigo-500 h-full mt-5 w-full focus:outline-none text-2xl"
         placeholder={placeholder}
         value={value}
       />
@@ -42,7 +42,7 @@ export const Password = ({ name, touched, error,onChange }) => {
       <div className="flex justify-items-end items-center border-b-2 border-indigo-500 h-5 mt-5 w-83.2">
         <input
           name={name}
-          className="w-75 focus:outline-none text-xs"
+          className="w-75 h-full focus:outline-none text-2xl"
           type={type}
           placeholder={"Password"}
           onChange={onChange}
