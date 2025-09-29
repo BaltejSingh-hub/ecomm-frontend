@@ -3,12 +3,9 @@ import { Navigate,Outlet } from "react-router-dom";
 
 
 const ProtectedRoute=({statusCode,setStatusCode})=>{
-
-    const token = Cookies.get("token");
-    
-    const isAuthenticated=token
-
-     console.log("INSIDE THE PROTECTED CODE for authenticated",isAuthenticated)
+    const isAuthenticated = Cookies.get("token");
+   console.log("isAuthenticated",isAuthenticated) 
+    console.log("INSIDE THE PROTECTED CODE for authenticated",isAuthenticated)
     console.log("INSIDE THE PROTECTED CODE",statusCode)
 
     return(

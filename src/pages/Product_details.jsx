@@ -17,6 +17,7 @@ const Product_details = () => {
   const [images, setImages] = useState([]);
   const [imageIndex, setimageIndex] = useState(0);
   const token = Cookies.get("token");
+  const navigate = useNavigate("");
 
   function SelectImage(e) {
     setimageIndex(e);
@@ -125,7 +126,7 @@ const Product_details = () => {
             <Quantity_Selector />
           </div>
           <div name="Add" className=" w-26 h-12 m-4">
-            <button className="w-26 h-12 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition hover:cursor-pointer">
+            <button onClick={()=> navigate("/cart")} className="w-26 h-12 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition hover:cursor-pointer">
               Add to Cart
             </button>
           </div>

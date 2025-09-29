@@ -8,6 +8,7 @@ import Product_details from "./pages/Product_details";
 import toast, { Toaster } from 'react-hot-toast';
 import ProtectedRoute from "./utils/ProtectedRoute";
 import { Navigate, Outlet } from "react-router-dom";
+import Cart from "./pages/Cart";
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
                     <Route element={<ProtectedRoute statusCode= {statusCode} setStatusCode={setStatusCode} />}>
                             <Route path="/" element={<Dashboard statusCode= {statusCode} setStatusCode={setStatusCode} />} />
                             <Route path="/profile" element={<Profile />} />
+                            <Route path="/cart" element={<Cart/>}/>
                             <Route path="/product_details/:id" element={<Product_details />} />
                             {/* <Route path="/product_details" element={<Product_details />} /> */}
 
@@ -58,7 +60,7 @@ function App() {
 }
 
 export default App;
-
+// https://docs.google.com/spreadsheets/d/12KWMkchj0WgpWeeDFtNxZpXE3kQ3_A31-Wc8XjhPU_A/edit?usp=sharing
 
 // how to implement useNavigate in react ?
 

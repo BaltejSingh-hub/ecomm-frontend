@@ -35,7 +35,6 @@ const SignInCard = ({ selectPage, setSelectPage }) => {
     },
     validationSchema,
     onSubmit: async (values) => {
-
       try {
         const response = await axios.post(
           `${import.meta.env.VITE_REACT_API}welcome/signin`,
@@ -44,6 +43,8 @@ const SignInCard = ({ selectPage, setSelectPage }) => {
             password: values.password,
           }
         );
+
+        console.log("response",response)
 
         if (response.status === 200) {
           const token = response.data.token;
@@ -56,7 +57,7 @@ const SignInCard = ({ selectPage, setSelectPage }) => {
           navigate("/");
         }, 1000);
       } catch (err) {
-        console.error(err.message)
+        console.error(err)
         // console.log(err.response.data.msg);
         // toast(err.response.data.msg);
       }
@@ -85,7 +86,6 @@ const SignInCard = ({ selectPage, setSelectPage }) => {
     }
   };
 
-  console.log(formik);
 
   return (
     <div
